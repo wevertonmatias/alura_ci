@@ -54,7 +54,7 @@ jobs:
       uses: actions/upload-artifact@v4.3.3
       with:
         name: app_go
-        path: main.go
+        path: ./main
 
   docker:
     needs: build
