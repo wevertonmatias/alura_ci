@@ -3,6 +3,8 @@ services:
     postgres:
         image: "postgres"
         environment:
+            - HOST=localhost
+            - PORT=5432
             - POSTGRES_USER=root
             - POSTGRES_PASSWORD=root
             - POSTGRES_DB=root
