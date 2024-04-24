@@ -3,8 +3,6 @@ services:
     postgres:
         image: "postgres"
         environment:
-            - HOST=localhost
-            - PORT=5432
             - POSTGRES_USER=root
             - POSTGRES_PASSWORD=root
             - POSTGRES_DB=root
@@ -16,7 +14,7 @@ services:
     pgadmin-compose:
         image: dpage/pgadmin4
         environment:
-            PGADMIN_DEFAULT_EMAIL: "gui@alura.com"
+            PGADMIN_DEFAULT_EMAIL: "weverton-matias@hotmail.com"
             PGADMIN_DEFAULT_PASSWORD: "123456"
         ports:
             - "15632:80"
