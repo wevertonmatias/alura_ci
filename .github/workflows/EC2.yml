@@ -15,5 +15,11 @@ jobs:
         name: api-go
 
     - uses: actions/checkout@v3
-    
-      
+    - name: ssh deploy
+      uses: easingthemes/ssh-deploy@v5.0.3
+      with:
+        SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
+        REMOTE_HOST: ${{secrets.REMOTE_HOST}}
+        REMOTE_USER: ${{secrets.REMOTE_USER}}
+        TARGET: /home/${{secrets.REMOTE_USER}}
+        EXCLUDE: "/postgres-data"
