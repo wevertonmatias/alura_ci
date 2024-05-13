@@ -15,6 +15,7 @@ jobs:
         name: api-go
 
     - uses: actions/checkout@v3
+    
     - name: ssh deploy
       uses: easingthemes/ssh-deploy@v5.0.3
       with:
@@ -23,3 +24,15 @@ jobs:
         REMOTE_USER: ${{secrets.REMOTE_USER}}
         TARGET: /home/${{secrets.REMOTE_USER}}
         EXCLUDE: "/postgres-data"
+
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{secrets.REMOTE_HOST}}
+        username: ${{secrets.REMOTE_USER}}
+        key: ${{secrets.SSH_PRIVATE_KEY}}
+        port: 22
+        script: _script._sh
+
+    
+  
