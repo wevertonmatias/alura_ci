@@ -11,7 +11,7 @@ jobs:
     - name: Download a Build Artifact
       uses: actions/download-artifact@v4.1.7
       with:
-        name: api-go
+        name: api_go
         
     - uses: actions/checkout@v3
         
