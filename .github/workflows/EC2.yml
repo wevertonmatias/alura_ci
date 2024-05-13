@@ -38,3 +38,4 @@ jobs:
           export PASSWORD=${{secrets.DBPASSWORD}}
           export DBNAME=${{secrets.DBNAME}}
           export PORT=${{secrets.DBPORT}}
+          export PORT=8000
